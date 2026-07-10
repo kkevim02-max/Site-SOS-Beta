@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#081a38">
+  <title>Desafio da Jornada</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="hud hidden" id="hud">
+    <div><b id="levelLabel">Fase 1/6</b><small id="levelName">Memória</small></div>
+    <div class="progress"><i id="progressBar"></i></div>
+    <button class="sound" id="soundBtn" aria-label="Controle de som">🔊</button>
+  </header>
+
+  <main id="app">
+    <section class="screen active intro" id="intro">
+      <div class="logo">🎮</div>
+      <p class="eyebrow">UMA PEQUENA JORNADA</p>
+      <h1>Bem-vinda ao desafio!</h1>
+      <div class="notice">
+        <h2>Antes de começar</h2>
+        <p>Use fones de ouvido, se puder. Em algumas fases, leia a orientação com atenção antes de jogar.</p>
+        <p>Não tenha pressa: cada jogo possui uma regra diferente.</p>
+        <label><input type="checkbox" id="readyCheck"> Li e estou pronta.</label>
+      </div>
+      <button class="primary" id="startBtn" disabled>Começar a jornada</button>
+    </section>
+
+    <section class="screen" id="briefing">
+      <div class="chapter-icon" id="briefIcon">🧠</div>
+      <p class="eyebrow" id="briefStage">FASE 1</p>
+      <h1 id="briefTitle">Jogo da memória</h1>
+      <div class="card"><p id="briefText"></p></div>
+      <button class="primary" id="playBtn">Jogar</button>
+    </section>
+
+    <section class="screen game-screen" id="game">
+      <div id="gameArea"></div>
+      <p class="status" id="statusText"></p>
+    </section>
+
+    <section class="screen" id="transition">
+      <div class="success-burst">✓</div>
+      <p class="eyebrow">FASE CONCLUÍDA</p>
+      <h1 id="transitionTitle">Muito bem!</h1>
+      <p id="transitionText">A próxima etapa foi desbloqueada.</p>
+      <button class="primary" id="nextBtn">Próxima fase</button>
+    </section>
+
+    <section class="screen reward" id="reward">
+      <div class="trophy">🏆</div>
+      <p class="eyebrow">JORNADA CONCLUÍDA</p>
+      <h1>Prêmio desbloqueado!</h1>
+      <p>Você completou todos os jogos. Agora chegou a hora de receber sua recompensa especial.</p>
+      <button class="gold" id="openRewardBtn">Abrir recompensa</button>
+    </section>
+
+    <section class="screen scanner-screen" id="scannerScreen">
+      <div class="terminal" id="terminal">
+        <div class="terminal-bar"><span></span><span></span><span></span><b>scanner.exe</b></div>
+        <div class="terminal-body" id="terminalBody"></div>
+      </div>
+      <div class="scan-card hidden" id="scanCard">
+        <div class="scan-ring"><div>✨</div></div>
+        <h2>Scanner de Qualidades</h2>
+        <div class="scan-progress"><i id="scanProgress"></i></div>
+        <p id="scanPercent">0%</p>
+        <div class="qualities" id="qualities"></div>
+      </div>
+    </section>
+
+    <section class="screen final" id="finalScreen">
+      <div class="confetti" id="confetti"></div>
+      <p class="eyebrow">RESULTADO FINAL</p>
+      <h1>Sistema incapaz de calcular.</h1>
+      <p class="big-result">Quantidade de qualidades acima do esperado. ❤️</p>
+      <div class="final-card">
+        <h2>Prêmio especial</h2>
+        <p>Linda, inteligente, gentil, carinhosa, divertida, alegre, atenciosa, educada, paciente, dedicada, talentosa, criativa, corajosa, humilde, generosa, sincera, confiável, encantadora, especial, única, incrível, determinada, companheira, delicada, simpática, inspiradora, luminosa e dona de um coração maravilhoso.</p>
+        <p class="soft">Talvez nem todos os elogios do mundo consigam explicar completamente o quanto você é especial.</p>
+      </div>
+      <button class="primary" id="restartBtn">Jogar novamente</button>
+    </section>
+  </main>
+
+  <div class="volume-pop hidden" id="volumePop">
+    <span>🔉</span><input id="volumeSlider" type="range" min="0" max="100" value="18"><button id="muteBtn">Silenciar</button>
+  </div>
+
+  <audio id="musicA" preload="auto" loop src="assets/audio/minha-essencia.mp3"></audio>
+  <audio id="musicB" preload="auto" loop src="assets/audio/o-poco.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

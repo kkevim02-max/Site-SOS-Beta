@@ -1,0 +1,7 @@
+DESAFIO DA JORNADA — SITE MOBILE
+
+1. Abra index.html para testar.
+2. Para publicar no GitHub Pages, envie todos os arquivos mantendo as pastas.
+3. O áudio só começa depois do toque em “Começar a jornada”, por exigência dos navegadores de celular.
+4. Não renomeie nem mova a pasta assets/audio sem alterar os caminhos no index.html.
+5. O site não coleta cliques, localização ou dados pessoais.
