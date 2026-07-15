@@ -1,0 +1,26 @@
+SITE FÉ CATÓLICA — VERSÃO JOVEM
+
+Páginas:
+- index.html
+- igreja.html
+- terco.html
+- castidade.html
+- vocacao.html
+- oracoes.html
+
+Destaques:
+- Visual amarelo e branco inspirado no Vaticano;
+- Páginas separadas;
+- Ilustrações próprias em SVG;
+- Animações suaves;
+- Tema claro/escuro;
+- Trilha de estudos com progresso salvo;
+- Desafio semanal interativo;
+- Mistérios do Terço em abas;
+- Modo oração.
+
+COMO ABRIR
+Extraia o ZIP e abra index.html.
+
+GITHUB PAGES
+Envie todos os arquivos e a pasta assets para a raiz do repositório.
