@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" role="img" aria-labelledby="title">
+<title id="title">Diagrama simples do Santo Terço</title>
+<path d="M160 210c40-140 400-140 440 0 35 124-70 195-220 195S125 334 160 210Z" fill="none" stroke="#102a43" stroke-width="5"/>
+<g fill="#ffd000" stroke="#102a43" stroke-width="4">
+  <circle cx="173" cy="199" r="13"/><circle cx="197" cy="147" r="13"/><circle cx="238" cy="108" r="13"/>
+  <circle cx="291" cy="82" r="13"/><circle cx="350" cy="70" r="13"/><circle cx="410" cy="71" r="13"/>
+  <circle cx="469" cy="85" r="13"/><circle cx="522" cy="112" r="13"/><circle cx="563" cy="151" r="13"/>
+  <circle cx="587" cy="202" r="13"/><circle cx="592" cy="256" r="13"/><circle cx="576" cy="307" r="13"/>
+  <circle cx="540" cy="349" r="13"/><circle cx="490" cy="378" r="13"/><circle cx="433" cy="395" r="13"/>
+  <circle cx="375" cy="399" r="13"/><circle cx="317" cy="393" r="13"/><circle cx="261" cy="375" r="13"/>
+  <circle cx="213" cy="345" r="13"/><circle cx="179" cy="303" r="13"/><circle cx="164" cy="253" r="13"/>
+</g>
+<path d="M375 399v42" stroke="#102a43" stroke-width="5"/>
+<circle cx="375" cy="450" r="14" fill="#ffd000" stroke="#102a43" stroke-width="4"/>
+<path d="M375 464v30" stroke="#102a43" stroke-width="5"/>
+<path d="M355 494h40v58h-40zM342 511h66v22h-66z" transform="translate(0 -55)" fill="#ffd000" stroke="#102a43" stroke-width="4"/>
+</svg>
