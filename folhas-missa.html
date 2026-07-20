@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Portal S.O.S — formação musical e litúrgica." name="description"/><meta content="#1E386B" name="theme-color"/>
+<title>Folhas das Missas | S.O.S</title><link href="assets/img/logo-sos.png" rel="icon"/><link href="assets/css/style.css" rel="stylesheet"/><link href="assets/css/app-theme.css?v=4" rel="stylesheet"/></head>
+<body>
+<header class="site-header app-header">
+<nav aria-label="Navegação principal" class="navbar container app-navbar">
+<a aria-label="Página inicial do S.O.S" class="brand app-brand" href="index.html">
+<img alt="Logo do S.O.S" src="assets/img/logo-sos.png"/>
+<span>
+<strong>S.O.S</strong>
+<small>Servos aos Olhos do Senhor</small>
+</span>
+</a>
+<div aria-label="Arquidiocese e Paróquia" class="church-identities"><img alt="Brasão da Arquidiocese de Teresina" class="church-identity-logo archdiocese-header-logo" src="assets/img/brasao-arquidiocese.png"/><img alt="Logo da Paróquia Nossa Senhora da Conceição Aparecida" class="church-identity-logo parish-header-logo" src="assets/img/logo-paroquia.png"/></div>
+<button aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu" class="nav-toggle app-menu-button">☰</button>
+<ul class="nav-links" id="menu-principal"><li><a class="" href="index.html">Início</a></li><li><a class="" href="sobre.html">Quem somos</a></li><li><a class="" href="formacao-musical.html">Formação musical</a></li><li><a class="" href="formacao-liturgica.html">Liturgia</a></li><li><a class="active" href="folhas-missa.html">Folhas</a></li><li><a class="" href="apostilas.html">Apostilas</a></li><li><a class="" href="contato.html">Contato</a></li></ul>
+</nav>
+</header>
+<main><section class="page-hero"><div class="container"><div><span class="eyebrow">Materiais de celebração</span><h1>Folhas das Missas</h1><p>Pesquise e abra as folhas publicadas pelo S.O.S.</p></div><div class="page-symbol">▤</div></div></section>
+<section class="section"><div class="container">
+<div class="toolbar"><input id="search" placeholder="Pesquisar celebração..." type="search"/><select id="filter"><option value="todos">Todas</option><option value="domingo">Domingos</option><option value="juventude">Missa da Juventude</option><option value="solenidade">Solenidades</option><option value="outro">Outras</option></select></div>
+<div class="resource-list" id="resourceList"></div>
+</div></section></main>
+<footer class="footer app-footer">
+<div class="container">
+<div class="app-footer-top">
+<div class="footer-identity">
+<img alt="S.O.S" class="footer-logo" src="assets/img/logo-sos.png"/>
+<div>
+<strong>S.O.S — Servos aos Olhos do Senhor</strong>
+<p>Formação musical, litúrgica e espiritual para jovens que desejam servir com fé, responsabilidade e alegria.</p>
+</div>
+</div>
+<div class="footer-institution-names"><strong>Arquidiocese de Teresina</strong><strong>Paróquia Nossa Senhora da Conceição Aparecida</strong></div>
+</div>
+<div class="footer-grid app-footer-links">
+<div>
+<h3>Formação</h3>
+<a href="formacao-musical.html">Cursos musicais</a>
+<a href="formacao-liturgica.html">Liturgia e ano litúrgico</a>
+</div>
+<div>
+<h3>Materiais</h3>
+<a href="folhas-missa.html">Folhas das Missas</a>
+<a href="apostilas.html">Apostilas</a>
+</div>
+<div>
+<h3>Institucional</h3>
+<a href="sobre.html">Quem somos</a>
+<a href="contato.html">Contato</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 S.O.S — Servos aos Olhos do Senhor.</span>
+<span>Cristo no centro. O dom a serviço.</span>
+</div>
+</div>
+</footer>
+<script src="assets/data/config.js"></script><script src="assets/js/script.js"></script><script src="assets/data/folhas.js"></script><script src="assets/js/render.js"></script><script>renderFolhas()</script>
+<script src="assets/js/app-shell.js"></script></body></html>

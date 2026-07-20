@@ -1,0 +1,952 @@
+/* =========================================================
+   CONCEITO S.O.S — APP CATÓLICO JOVEM / MOBILE FIRST
+   ========================================================= */
+:root{
+  --app-blue:#18366f;
+  --app-blue-deep:#0b1d43;
+  --app-blue-mid:#2a5599;
+  --app-gold:#f1dc3b;
+  --app-gold-soft:#fff8ce;
+  --app-surface:#ffffff;
+  --app-bg:#f3f6fb;
+  --app-ink:#10234c;
+  --app-muted:#64718a;
+  --app-line:#dfe5ef;
+  --app-radius:18px;
+  --app-shadow:0 14px 36px rgba(12,36,82,.10);
+}
+
+body{
+  background:var(--app-bg);
+  color:var(--app-ink);
+  padding-bottom:0;
+}
+
+.topbar{display:none!important}
+
+.site-header.app-header{
+  position:sticky;
+  top:0;
+  z-index:90;
+  background:rgba(18,45,96,.96);
+  border:0;
+  box-shadow:0 8px 30px rgba(7,21,50,.14);
+  backdrop-filter:blur(16px);
+}
+
+.app-navbar{
+  min-height:76px;
+  gap:16px;
+}
+
+.app-brand{
+  min-width:0;
+  gap:10px;
+}
+.app-brand img{
+  width:52px;
+  height:52px;
+}
+.app-brand strong{
+  font-size:1rem;
+  letter-spacing:.02em;
+}
+.app-brand small{
+  max-width:170px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.archdiocese-header-badge{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+}
+.archdiocese-header-badge img{
+  width:38px;
+  height:48px;
+  object-fit:contain;
+}
+.archdiocese-header-badge span{
+  display:none;
+  line-height:1.05;
+}
+.archdiocese-header-badge small{
+  display:block;
+  color:rgba(255,255,255,.62);
+  font-size:.64rem;
+}
+.archdiocese-header-badge strong{
+  display:block;
+  color:#fff;
+  font-size:.75rem;
+  margin-top:3px;
+}
+
+.app-menu-button{
+  display:grid;
+  place-items:center;
+  flex:0 0 44px;
+  border-radius:12px;
+  background:var(--app-gold);
+}
+
+.nav-links{
+  border-radius:0 0 20px 20px;
+}
+.nav-links a{
+  font-size:.95rem;
+}
+
+/* HOME */
+.app-home{overflow:hidden}
+.app-hero{
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+  background:
+    radial-gradient(circle at 80% 10%,rgba(241,220,59,.18),transparent 26%),
+    linear-gradient(145deg,var(--app-blue-deep),var(--app-blue) 58%,var(--app-blue-mid));
+}
+.app-hero::before{
+  content:"";
+  position:absolute;
+  left:-40px;
+  bottom:-95px;
+  width:260px;
+  height:360px;
+  border:22px solid rgba(255,255,255,.035);
+  border-bottom:0;
+  border-radius:150px 150px 0 0;
+  transform:rotate(-9deg);
+}
+.app-hero-grid{
+  position:relative;
+  z-index:2;
+  min-height:calc(100svh - 76px);
+  padding:54px 0 48px;
+  display:grid;
+  gap:34px;
+  align-items:center;
+}
+.app-hero-copy h1{
+  max-width:760px;
+  margin:15px 0 18px;
+  font-size:clamp(2.75rem,12vw,5.4rem);
+  line-height:.98;
+  letter-spacing:-.055em;
+}
+.app-hero-copy h1 span{color:var(--app-gold)}
+.app-hero-copy>p{
+  max-width:680px;
+  margin:0;
+  color:rgba(255,255,255,.80);
+  font-size:1.02rem;
+}
+.institution-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 11px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);
+  border-radius:999px;
+  color:rgba(255,255,255,.88);
+  font-size:.73rem;
+  font-weight:800;
+}
+.institution-pill img{
+  width:24px;
+  height:29px;
+  object-fit:contain;
+}
+.app-hero-actions{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+.app-hero-actions .btn{
+  width:100%;
+  border-radius:14px;
+  min-height:52px;
+}
+.scripture-card{
+  margin-top:24px;
+  padding:18px 18px 17px;
+  border-left:4px solid var(--app-gold);
+  background:rgba(255,255,255,.075);
+  backdrop-filter:blur(8px);
+  border-radius:0 14px 14px 0;
+}
+.scripture-card span{
+  display:block;
+  color:var(--app-gold);
+  font-size:.68rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:900;
+}
+.scripture-card blockquote{
+  margin:7px 0 3px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.08rem;
+  line-height:1.45;
+}
+.scripture-card cite{
+  color:rgba(255,255,255,.65);
+  font-style:normal;
+  font-size:.78rem;
+}
+.app-hero-visual{
+  position:relative;
+  min-height:315px;
+  display:grid;
+  place-items:center;
+}
+.arch-window{
+  position:absolute;
+  inset:0 8% 0;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:180px 180px 20px 20px;
+  background:
+    linear-gradient(90deg,transparent 49.5%,rgba(255,255,255,.08) 50%,transparent 50.5%),
+    linear-gradient(rgba(255,255,255,.045),rgba(255,255,255,.015));
+  overflow:hidden;
+}
+.arch-window::before,
+.arch-window::after{
+  content:"";
+  position:absolute;
+  background:rgba(255,255,255,.055);
+}
+.arch-window::before{left:0;right:0;top:46%;height:1px}
+.arch-window::after{top:0;bottom:0;left:31%;width:1px;box-shadow:calc(38vw) 0 rgba(255,255,255,.055)}
+.arch-ray{
+  position:absolute;
+  top:-25%;
+  width:18px;
+  height:150%;
+  background:linear-gradient(rgba(241,220,59,.18),transparent);
+  transform:rotate(22deg);
+  filter:blur(2px);
+}
+.arch-ray-1{left:28%}
+.arch-ray-2{left:50%;opacity:.6}
+.arch-ray-3{left:67%;opacity:.4}
+.hero-emblem{
+  width:min(72vw,300px);
+  position:relative;
+  z-index:2;
+  filter:drop-shadow(0 22px 34px rgba(0,0,0,.24));
+}
+.hero-mini-church{
+  position:absolute;
+  z-index:3;
+  right:0;
+  bottom:0;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(6,20,49,.56);
+  backdrop-filter:blur(12px);
+  border-radius:14px;
+}
+.hero-mini-church img{
+  width:39px;
+  height:49px;
+  object-fit:contain;
+}
+.hero-mini-church small{
+  display:block;
+  color:rgba(255,255,255,.58);
+  font-size:.62rem;
+}
+.hero-mini-church strong{
+  display:block;
+  color:#fff;
+  font-size:.73rem;
+}
+
+.app-section{
+  padding:64px 0;
+}
+.app-section-heading{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:22px;
+}
+.app-section-heading h2{
+  margin:4px 0 0;
+  color:var(--app-ink);
+  font-size:clamp(1.75rem,7vw,2.7rem);
+  line-height:1.06;
+  letter-spacing:-.035em;
+}
+.app-section-heading>a{
+  flex:0 0 auto;
+  color:var(--app-blue);
+  font-weight:900;
+  font-size:.83rem;
+}
+
+.quick-app-grid{
+  display:grid;
+  gap:12px;
+}
+.quick-app-card{
+  display:grid;
+  grid-template-columns:52px minmax(0,1fr) auto;
+  align-items:center;
+  gap:13px;
+  min-height:82px;
+  padding:14px;
+  background:var(--app-surface);
+  border:1px solid var(--app-line);
+  border-radius:var(--app-radius);
+  box-shadow:0 8px 24px rgba(12,36,82,.055);
+  transition:.22s ease;
+}
+.quick-app-card:active{transform:scale(.985)}
+.quick-icon{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:var(--app-blue);
+  border-radius:14px;
+  font-size:1.3rem;
+  font-weight:900;
+}
+.quick-ihs{font-family:Georgia,serif;font-size:1rem}
+.quick-app-card strong{
+  display:block;
+  color:var(--app-ink);
+  font-size:.96rem;
+}
+.quick-app-card small{
+  display:block;
+  margin-top:3px;
+  color:var(--app-muted);
+  line-height:1.3;
+}
+.quick-app-card>b{
+  color:var(--app-blue);
+  font-size:1.65rem;
+  font-weight:400;
+}
+.quick-liturgy .quick-icon{background:#7a4d95}
+.quick-sheets .quick-icon{background:#2b7b67}
+.quick-books .quick-icon{background:#a66b21}
+
+.app-courses-section{background:#eaf0f9}
+.course-app-scroll{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:minmax(240px,84%);
+  gap:14px;
+  overflow-x:auto;
+  padding:2px 2px 16px;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+}
+.course-app-scroll::-webkit-scrollbar{display:none}
+.course-app-card{
+  scroll-snap-align:start;
+  min-height:240px;
+  padding:22px;
+  border-radius:20px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 82% 14%,rgba(241,220,59,.22),transparent 28%),
+    linear-gradient(145deg,var(--app-blue-deep),var(--app-blue-mid));
+  box-shadow:var(--app-shadow);
+}
+.course-app-card:nth-child(2){background:linear-gradient(145deg,#53315f,#86519a)}
+.course-app-card:nth-child(3){background:linear-gradient(145deg,#1d4d68,#337ba0)}
+.course-app-card:nth-child(4){background:linear-gradient(145deg,#3c414f,#626c82)}
+.course-app-symbol{
+  display:grid;
+  place-items:center;
+  width:52px;
+  height:52px;
+  margin-bottom:22px;
+  border-radius:15px;
+  background:rgba(255,255,255,.12);
+  font-size:1.45rem;
+}
+.course-app-card small{
+  color:rgba(255,255,255,.58);
+  font-weight:800;
+}
+.course-app-card strong{
+  display:block;
+  margin:3px 0 7px;
+  font-size:1.55rem;
+}
+.course-app-card p{
+  margin:0;
+  color:rgba(255,255,255,.72);
+  font-size:.9rem;
+}
+.course-app-link{
+  display:block;
+  margin-top:20px;
+  color:var(--app-gold);
+  font-weight:900;
+}
+
+.faith-app-panel{
+  padding:24px;
+  border-radius:24px;
+  color:#fff;
+  background:
+    linear-gradient(135deg,rgba(11,29,67,.92),rgba(24,54,111,.95)),
+    var(--app-blue);
+  box-shadow:var(--app-shadow);
+}
+.faith-app-copy h2{
+  margin:8px 0 12px;
+  color:#fff;
+  font-size:clamp(2rem,8vw,3.2rem);
+  line-height:1.02;
+}
+.faith-app-copy p{color:rgba(255,255,255,.72)}
+.faith-app-copy .kicker{color:var(--app-gold)}
+.faith-app-copy .btn{margin-top:12px;border-radius:13px}
+.faith-app-list{
+  display:grid;
+  gap:11px;
+  margin-top:26px;
+}
+.faith-app-list article{
+  display:grid;
+  grid-template-columns:46px 1fr;
+  gap:12px;
+  padding:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.065);
+  border-radius:15px;
+}
+.faith-app-list article>span{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  color:var(--app-gold);
+  background:rgba(0,0,0,.12);
+  border-radius:13px;
+  font-family:Georgia,serif;
+  font-weight:900;
+}
+.faith-app-list strong{display:block}
+.faith-app-list p{
+  margin:3px 0 0;
+  color:rgba(255,255,255,.66);
+  font-size:.86rem;
+  line-height:1.4;
+}
+
+.mission-strip-section{padding-top:0}
+.mission-strip{
+  display:grid;
+  grid-template-columns:68px 1fr;
+  gap:16px;
+  align-items:center;
+  padding:18px;
+  border:1px solid #eadf9a;
+  background:var(--app-gold-soft);
+  border-radius:18px;
+}
+.mission-strip img{
+  width:66px;
+  height:78px;
+  object-fit:contain;
+}
+.mission-strip span{
+  display:block;
+  color:#947d00;
+  font-size:.67rem;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  font-weight:900;
+}
+.mission-strip strong{
+  display:block;
+  margin-top:3px;
+  color:var(--app-ink);
+}
+.mission-strip p{
+  margin:3px 0 0;
+  color:var(--app-muted);
+  font-size:.82rem;
+}
+
+/* PÁGINAS INTERNAS */
+.page-hero{
+  padding:56px 0 48px;
+  background:
+    radial-gradient(circle at 82% 12%,rgba(241,220,59,.18),transparent 27%),
+    linear-gradient(145deg,var(--app-blue-deep),var(--app-blue) 62%,var(--app-blue-mid));
+}
+.page-hero .container{
+  gap:24px;
+}
+.page-hero h1{
+  font-size:clamp(2.45rem,10vw,4.3rem);
+}
+.page-symbol{
+  opacity:.15;
+}
+.section{
+  padding:64px 0;
+}
+.card,
+.lesson-row,
+.resource,
+.season,
+.lesson-block,
+.rite-card,
+.faith-card{
+  border-radius:16px;
+}
+.content-grid{
+  gap:22px;
+}
+.sidebar{
+  border-radius:15px;
+  overflow:hidden;
+}
+.lesson-row{
+  grid-template-columns:50px minmax(0,1fr);
+  padding:15px;
+}
+.lesson-row .small-btn{
+  grid-column:1/-1;
+  text-align:center;
+  border-radius:11px;
+}
+.lesson-number{border-radius:12px}
+.resource{border-radius:16px}
+.resource-date{border-radius:11px}
+.small-btn{border-radius:10px}
+
+/* RODAPÉ */
+.app-footer{
+  padding:48px 0 104px;
+  background:var(--app-blue-deep);
+}
+.app-footer-top{
+  display:grid;
+  gap:22px;
+}
+.footer-identity{
+  display:flex;
+  align-items:flex-start;
+  gap:13px;
+}
+.footer-identity .footer-logo{
+  width:78px;
+  margin:0;
+}
+.footer-identity strong{color:#fff}
+.footer-identity p{
+  margin:5px 0 0;
+  color:rgba(255,255,255,.64);
+  font-size:.88rem;
+}
+.footer-church{
+  display:grid;
+  grid-template-columns:58px 1fr;
+  gap:12px;
+  align-items:center;
+  padding:15px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.055);
+  border-radius:15px;
+}
+.footer-church img{
+  width:58px;
+  height:70px;
+  object-fit:contain;
+}
+.footer-church span{
+  display:block;
+  color:var(--app-gold);
+  font-size:.66rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-weight:900;
+}
+.footer-church strong{
+  display:block;
+  margin-top:3px;
+  color:#fff;
+}
+.footer-church small{
+  display:block;
+  margin-top:3px;
+  color:rgba(255,255,255,.57);
+}
+.app-footer-links{
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+  margin-top:34px;
+}
+.app-footer-links>div:first-child{grid-column:auto}
+
+/* BARRA INFERIOR — SOMENTE CELULAR */
+.mobile-bottom-nav{
+  position:fixed;
+  left:10px;
+  right:10px;
+  bottom:10px;
+  z-index:110;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:3px;
+  min-height:66px;
+  padding:7px;
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(16,35,76,.10);
+  border-radius:20px;
+  box-shadow:0 16px 42px rgba(8,25,58,.22);
+  backdrop-filter:blur(16px);
+}
+.mobile-bottom-nav a,
+.mobile-bottom-nav button{
+  border:0;
+  background:transparent;
+  color:#71809b;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  border-radius:14px;
+  font-size:.61rem;
+  font-weight:800;
+}
+.mobile-bottom-nav .bottom-icon{
+  font-size:1.12rem;
+  line-height:1;
+}
+.mobile-bottom-nav .active{
+  color:var(--app-blue);
+  background:#edf2fa;
+}
+
+@media(min-width:720px){
+  .app-hero-actions{
+    display:flex;
+  }
+  .app-hero-actions .btn{
+    width:auto;
+  }
+  .quick-app-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .course-app-scroll{
+    grid-auto-columns:minmax(260px,42%);
+  }
+  .faith-app-panel{
+    padding:36px;
+  }
+  .app-footer-top{
+    grid-template-columns:1.2fr .8fr;
+  }
+  .app-footer-links{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(min-width:981px){
+  body{padding-bottom:0}
+  .app-navbar{min-height:84px}
+  .app-menu-button{display:none}
+  .archdiocese-header-badge span{display:block}
+  .archdiocese-header-badge{order:2;margin-left:6px}
+  .nav-links{order:1;margin-left:auto}
+  .app-hero-grid{
+    min-height:650px;
+    grid-template-columns:1.08fr .92fr;
+    padding:70px 0;
+  }
+  .app-hero-visual{min-height:470px}
+  .hero-emblem{width:min(31vw,390px)}
+  .arch-window::after{box-shadow:245px 0 rgba(255,255,255,.055)}
+  .quick-app-grid{grid-template-columns:repeat(4,1fr)}
+  .quick-app-card{
+    grid-template-columns:52px 1fr;
+    align-content:start;
+    min-height:168px;
+  }
+  .quick-app-card>b{display:none}
+  .course-app-scroll{
+    grid-auto-flow:initial;
+    grid-template-columns:repeat(4,1fr);
+    overflow:visible;
+  }
+  .faith-app-panel{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+    padding:52px;
+  }
+  .faith-app-list{margin-top:0}
+  .mission-strip{
+    grid-template-columns:88px 1fr;
+    max-width:760px;
+    margin:auto;
+    padding:24px 28px;
+  }
+  .mission-strip img{width:84px;height:98px}
+  .mobile-bottom-nav{display:none}
+  .app-footer{padding-bottom:28px}
+}
+
+@media(max-width:980px){
+  body{padding-bottom:88px}
+  .nav-links{
+    top:76px;
+    border-radius:0 0 22px 22px;
+    padding-bottom:28px;
+  }
+  .nav-links li a{
+    min-height:48px;
+    display:flex;
+    align-items:center;
+    border-radius:12px;
+  }
+}
+
+@media(max-width:390px){
+  .app-brand small{display:none}
+  .app-brand img{width:48px;height:48px}
+  .archdiocese-header-badge img{width:33px;height:42px}
+  .app-hero-copy h1{font-size:2.55rem}
+  .hero-mini-church{right:-2px}
+}
+
+
+/* =========================================================
+   CORREÇÃO MOBILE — LARGURA TOTAL E SEM SOBRAS LATERAIS
+   ========================================================= */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: clip;
+}
+
+body,
+main,
+header,
+footer,
+section,
+.app-home,
+.app-hero,
+.app-section,
+.page-hero {
+  width: 100%;
+  max-width: 100%;
+}
+
+.container {
+  width: min(calc(100% - 28px), var(--largura));
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.app-hero-grid,
+.app-hero-copy,
+.app-hero-visual,
+.quick-app-grid,
+.course-app-scroll,
+.faith-app-panel,
+.mission-strip,
+.app-footer-top,
+.footer-grid {
+  min-width: 0;
+  max-width: 100%;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+.arch-window {
+  max-width: calc(100% - 16px);
+}
+
+.mobile-bottom-nav {
+  max-width: calc(100vw - 20px);
+}
+
+/* Identidade institucional: Arquidiocese + Paróquia */
+.church-identities {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.church-identity-logo {
+  width: 34px;
+  height: 44px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.parish-header-logo {
+  width: 42px;
+  height: 42px;
+}
+
+.footer-institutions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.footer-institution-card {
+  display: grid;
+  grid-template-columns: 54px minmax(0,1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 13px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  border-radius: 14px;
+}
+
+.footer-institution-card img {
+  width: 54px;
+  height: 62px;
+  object-fit: contain;
+}
+
+.footer-institution-card strong {
+  display: block;
+  color: #fff;
+}
+
+.footer-institution-card small {
+  display: block;
+  margin-top: 3px;
+  color: rgba(255,255,255,.58);
+}
+
+@media (max-width: 390px) {
+  .container {
+    width: min(calc(100% - 22px), var(--largura));
+  }
+
+  .church-identities {
+    gap: 5px;
+  }
+
+  .church-identity-logo {
+    width: 29px;
+    height: 38px;
+  }
+
+  .parish-header-logo {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (min-width: 720px) {
+  .footer-institutions {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+
+/* AJUSTES FINAIS — IDENTIDADE INSTITUCIONAL E RODAPÉ LIMPO */
+.church-identities{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex:0 0 auto;
+}
+
+.church-identity-logo{
+  display:block;
+  object-fit:contain;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,.16));
+}
+
+.archdiocese-header-logo{
+  width:48px;
+  height:58px;
+}
+
+.parish-header-logo{
+  width:62px;
+  height:58px;
+}
+
+.footer-institution-names{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:14px;
+  padding-top:8px;
+}
+
+.footer-institution-names strong{
+  color:#fff;
+  font-size:.95rem;
+  line-height:1.35;
+  font-weight:800;
+}
+
+@media(max-width:980px){
+  .church-identities{
+    gap:10px;
+    margin-left:auto;
+  }
+
+  .archdiocese-header-logo{
+    width:34px;
+    height:43px;
+  }
+
+  .parish-header-logo{
+    width:46px;
+    height:43px;
+  }
+}
+
+@media(max-width:390px){
+  .church-identities{
+    gap:7px;
+  }
+
+  .archdiocese-header-logo{
+    width:30px;
+    height:38px;
+  }
+
+  .parish-header-logo{
+    width:40px;
+    height:38px;
+  }
+}

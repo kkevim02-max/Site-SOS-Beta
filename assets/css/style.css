@@ -1,0 +1,477 @@
+:root{
+  --azul:#1E386B;--azul-escuro:#10244c;--azul-2:#284D87;--amarelo:#F2DF39;
+  --branco:#fff;--fundo:#f6f8fc;--texto:#172033;--muted:#5d687c;--linha:#e6eaf1;
+  --largura:1180px;--sombra:0 18px 45px rgba(16,36,76,.12)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--texto);background:var(--branco);line-height:1.65}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit}
+.container{width:min(calc(100% - 34px),var(--largura));margin:auto}
+.topbar{background:#091a3d;color:#dfe6f3;font-size:.78rem;letter-spacing:.04em}
+.topbar .container{min-height:32px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(30,56,107,.97);border-bottom:1px solid rgba(255,255,255,.13);box-shadow:0 8px 25px rgba(5,18,44,.14);backdrop-filter:blur(12px)}
+.navbar{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:64px;height:64px;object-fit:contain}
+.brand strong{display:block;color:#fff;line-height:1;font-size:1rem}
+.brand small{display:block;color:rgba(255,255,255,.7);font-size:.7rem;margin-top:5px}
+.nav-toggle{display:none;width:44px;height:44px;border:0;background:var(--amarelo);color:var(--azul-escuro);font-weight:900;cursor:pointer}
+.nav-links{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:3px}
+.nav-links a{display:block;padding:11px 9px;color:rgba(255,255,255,.82);font-size:.86rem;font-weight:750;border-bottom:3px solid transparent}
+.nav-links a:hover,.nav-links a.active{color:#fff;border-bottom-color:var(--amarelo)}
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 86% 18%,rgba(242,223,57,.18),transparent 27%),radial-gradient(circle at 10% 88%,rgba(255,255,255,.07),transparent 24%),linear-gradient(125deg,#0b1d43,#1E386B 56%,#2b559a);background-size:130% 130%;animation:gradientMove 12s ease-in-out infinite alternate}
+@keyframes gradientMove{to{background-position:100% 45%}}
+.hero-grid{min-height:620px;display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:center;position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;text-transform:uppercase;font-size:.74rem;letter-spacing:.16em;font-weight:850}
+.eyebrow:before{content:"";width:42px;height:3px;background:var(--amarelo)}
+.hero h1{font-size:clamp(3rem,6vw,5.4rem);line-height:.97;letter-spacing:-.05em;margin:18px 0 20px}
+.hero h1 span{color:var(--amarelo)}
+.hero p{max-width:680px;color:rgba(255,255,255,.82);font-size:1.08rem}
+.hero-logo{padding:34px;background:rgba(4,15,38,.2);border:1px solid rgba(255,255,255,.13);box-shadow:0 30px 90px rgba(0,0,0,.2);animation:float 5s ease-in-out infinite;transition:transform .15s ease-out}
+@keyframes float{50%{transform:translateY(-10px)}}
+.floating{position:absolute;inset:0;pointer-events:none;z-index:1}
+.floating span{position:absolute;color:rgba(255,255,255,.11);font-weight:900;animation:note 8s ease-in-out infinite}
+.floating span:nth-child(1){left:7%;top:16%;font-size:2rem}
+.floating span:nth-child(2){left:44%;top:12%;font-size:1.4rem;animation-delay:-2s}
+.floating span:nth-child(3){right:9%;top:18%;font-size:2.8rem;animation-delay:-4s}
+.floating span:nth-child(4){left:15%;bottom:12%;font-size:1.8rem;animation-delay:-6s}
+@keyframes note{50%{transform:translateY(-25px) rotate(10deg);opacity:.9}}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border:2px solid transparent;font-weight:850;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--amarelo);color:var(--azul-escuro)}
+.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.btn-outline{border-color:rgba(255,255,255,.42);color:#fff}
+.btn-outline:hover{background:rgba(255,255,255,.08)}
+.section{padding:88px 0}
+.section-soft{background:var(--fundo)}
+.section-blue{background:var(--azul);color:#fff}
+.section-head{max-width:770px;margin-bottom:40px}
+.section-head.center{text-align:center;margin-inline:auto}
+.kicker{color:var(--azul);font-size:.76rem;text-transform:uppercase;letter-spacing:.16em;font-weight:850}
+.section-blue .kicker{color:var(--amarelo)}
+.title{margin:7px 0 13px;color:var(--azul-escuro);font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;letter-spacing:-.035em}
+.section-blue .title{color:#fff}
+.subtitle{margin:0;color:var(--muted)}
+.section-blue .subtitle{color:rgba(255,255,255,.76)}
+.grid-2,.grid-3,.grid-4{display:grid;gap:20px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.card{position:relative;overflow:hidden;padding:27px;background:#fff;border:1px solid var(--linha);border-top:5px solid var(--azul);box-shadow:0 6px 20px rgba(16,36,76,.04);transition:.22s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sombra)}
+.card:after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.65),transparent 65%);transform:translateX(-130%);transition:.8s;pointer-events:none}
+.card:hover:after{transform:translateX(130%)}
+.icon{width:48px;height:48px;display:grid;place-items:center;background:#eaf0fb;color:var(--azul);font-size:1.3rem;margin-bottom:16px}
+.card h3{margin:0 0 8px;color:var(--azul-escuro);font-size:1.18rem}
+.card p{margin:0;color:var(--muted)}
+.link{display:inline-block;margin-top:17px;color:var(--azul);font-weight:850}
+.page-hero{padding:82px 0 68px;color:#fff;background:radial-gradient(circle at 88% 18%,rgba(242,223,57,.16),transparent 26%),linear-gradient(125deg,#10244c,#1E386B)}
+.page-hero .container{display:grid;grid-template-columns:1fr auto;align-items:center;gap:35px}
+.page-hero h1{font-size:clamp(2.7rem,5vw,4.3rem);line-height:1;margin:10px 0 14px;letter-spacing:-.04em}
+.page-hero p{max-width:740px;margin:0;color:rgba(255,255,255,.8)}
+.page-symbol{font-size:6rem;opacity:.2}
+.content-grid{display:grid;grid-template-columns:285px 1fr;gap:38px;align-items:start}
+.sidebar{position:sticky;top:110px;border:1px solid var(--linha);background:#fff}
+.sidebar strong{display:block;background:var(--azul);color:#fff;padding:17px 19px}
+.sidebar a{display:block;padding:12px 19px;border-bottom:1px solid var(--linha);color:var(--muted)}
+.sidebar a:hover{background:#eaf0fb;color:var(--azul)}
+.article h2{color:var(--azul-escuro);font-size:2rem;margin-top:0}
+.article h3{color:var(--azul);margin-top:32px}
+.article p{color:#465169}
+.info{border-left:5px solid var(--amarelo);background:#fffbea;padding:20px;margin:25px 0}
+.course-header{padding:30px;background:radial-gradient(circle at 88% 18%,rgba(242,223,57,.16),transparent 27%),linear-gradient(125deg,#10244c,#1E386B);color:#fff;margin-bottom:28px}
+.course-header h2{margin:8px 0 8px;font-size:2.3rem}
+.course-header p{margin:0;color:rgba(255,255,255,.8)}
+.lesson-list{display:grid;gap:13px}
+.lesson-row{display:grid;grid-template-columns:62px 1fr auto;align-items:center;gap:18px;padding:18px;border:1px solid var(--linha);background:#fff;transition:.2s}
+.lesson-row:hover{border-left:5px solid var(--amarelo);box-shadow:0 10px 30px rgba(16,36,76,.09);transform:translateX(3px)}
+.lesson-number{width:48px;height:48px;display:grid;place-items:center;background:var(--azul);color:#fff;font-weight:900}
+.lesson-row h3{margin:0 0 4px;color:var(--azul-escuro)}
+.lesson-row p{margin:0;color:var(--muted);font-size:.92rem}
+.lesson-page{max-width:900px;margin:auto}
+.lesson-meta{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.tag{display:inline-block;padding:5px 9px;background:#eaf0fb;color:var(--azul);font-size:.73rem;font-weight:850}
+.lesson-block{margin:22px 0;padding:24px;border:1px solid var(--linha);background:#fff}
+.lesson-block h2{font-size:1.4rem;margin:0 0 12px;color:var(--azul-escuro)}
+.lesson-block ul{margin:0;padding-left:22px}
+.lesson-nav{display:flex;justify-content:space-between;gap:12px;margin-top:30px}
+.lesson-nav a{padding:12px 15px;background:var(--azul);color:#fff;font-weight:800}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;padding:17px;background:#eaf0fb;margin-bottom:25px}
+.toolbar input,.toolbar select{min-height:45px;border:1px solid #cdd4e0;background:#fff;padding:0 13px}
+.toolbar input{flex:1 1 260px}
+.resource-list{display:grid;gap:14px}
+.resource{display:grid;grid-template-columns:76px 1fr auto;gap:18px;align-items:center;padding:19px;background:#fff;border:1px solid var(--linha)}
+.resource-date{text-align:center;background:var(--azul);color:#fff;padding:10px 7px}
+.resource-date strong{display:block;color:var(--amarelo);font-size:1.4rem;line-height:1}
+.resource-date span{font-size:.68rem;text-transform:uppercase}
+.resource h3{margin:0 0 4px;color:var(--azul-escuro)}
+.resource p{margin:0;color:var(--muted);font-size:.9rem}
+.small-btn{display:inline-block;padding:10px 13px;background:var(--azul);color:#fff;font-size:.8rem;font-weight:850}
+.small-btn.disabled{opacity:.45;pointer-events:none}
+.empty{padding:30px;text-align:center;border:1px dashed #cdd4e0;color:var(--muted)}
+.seasons{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+.season{display:grid;grid-template-columns:12px 1fr;background:#fff;border:1px solid var(--linha)}
+.season-color{background:var(--season)}
+.season-body{padding:23px}
+.season h3{margin:0 0 6px;color:var(--azul-escuro)}
+.season p{margin:0;color:var(--muted)}
+.footer{background:#0b1d43;color:rgba(255,255,255,.72);padding:58px 0 22px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .8fr .8fr;gap:45px}
+.footer-logo{max-width:235px;margin-bottom:18px}
+.footer h3{color:#fff;margin-top:0}
+.footer a{display:block;margin:7px 0}
+.footer a:hover{color:var(--amarelo)}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;margin-top:42px;padding-top:19px;border-top:1px solid rgba(255,255,255,.12);font-size:.8rem}
+.reveal{opacity:0;transform:translateY(22px);transition:.65s}
+.reveal.visible{opacity:1;transform:none}
+.notice{padding:16px;border-left:5px solid var(--amarelo);background:#fffbea;color:#4b4b35}
+@media(max-width:980px){
+  .nav-toggle{display:grid;place-items:center}
+  .nav-links{display:none;position:absolute;top:86px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--azul);padding:15px 17px 22px;box-shadow:0 15px 30px rgba(0,0,0,.18)}
+  .nav-links.open{display:flex}
+  .hero-grid,.page-hero .container,.content-grid{grid-template-columns:1fr}
+  .hero-grid{padding:75px 0}
+  .hero-logo{max-width:430px;margin:auto}
+  .grid-4,.grid-3{grid-template-columns:repeat(2,1fr)}
+  .sidebar{position:static}
+  .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>:first-child{grid-column:1/-1}
+}
+@media(max-width:650px){
+  .topbar{display:none}.navbar{min-height:76px}.brand img{width:54px;height:54px}.brand small{display:none}.nav-links{top:76px}
+  .hero h1{font-size:3rem}.section{padding:66px 0}
+  .grid-4,.grid-3,.grid-2,.seasons{grid-template-columns:1fr}
+  .lesson-row{grid-template-columns:50px 1fr}.lesson-row .small-btn{grid-column:1/-1}
+  .resource{grid-template-columns:62px 1fr}.resource .small-btn{grid-column:1/-1}
+  .footer-grid{grid-template-columns:1fr}.footer-grid>:first-child{grid-column:auto}.footer-bottom{flex-direction:column}
+  .lesson-nav{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+
+/* Apoios visuais das aulas */
+.lesson-visual{background:#f8faff;border-color:#dfe6f2}
+.lesson-visual figure{margin:0}.lesson-visual figcaption{margin-top:10px;color:var(--muted);font-size:.86rem;text-align:center}
+.lesson-visual img{width:100%;max-height:720px;object-fit:contain;background:#fff;border:1px solid var(--linha);cursor:zoom-in}
+.visual-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.visual-gallery img{max-height:540px}
+.visual-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}.visual-steps div{padding:18px;background:#fff;border:1px solid var(--linha);text-align:center}.visual-steps span{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;margin:0 auto 9px;background:var(--amarelo);color:var(--azul-escuro);font-weight:900;font-size:1.1rem}.visual-steps strong{display:block;color:var(--azul-escuro)}
+.instrument-parts{position:relative;min-height:260px;background:#fff;border:1px solid var(--linha);display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:20px}.instrument-parts span{padding:8px;background:#eaf0fb;color:var(--azul);font-weight:800;text-align:center}.instrument-shape{grid-column:1/-1;min-height:95px;display:grid;place-items:center;border:4px solid var(--azul);border-radius:50% 50% 45% 45%;color:var(--azul);font-weight:900;letter-spacing:.18em}
+.mini-table,.error-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#d8deea;border:1px solid #d8deea}.mini-table div,.error-grid div{display:grid;grid-template-columns:100px 1fr;background:#fff}.mini-table strong,.mini-table span,.error-grid strong,.error-grid span{padding:12px}.mini-table strong,.error-grid strong{background:#eaf0fb;color:var(--azul)}
+.chord-flow{display:flex;flex-wrap:wrap;gap:12px}.chord-flow span{padding:13px 18px;background:var(--azul);color:#fff;font-size:1.05rem;font-weight:850;border-bottom:4px solid var(--amarelo)}
+.study-plan{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.study-plan div{padding:16px;text-align:center;background:#fff;border:1px solid var(--linha)}.study-plan strong{display:block;color:var(--azul);font-size:1.2rem}.study-plan span{color:var(--muted)}
+.quiz-list details{padding:13px 16px;background:#fff;border:1px solid var(--linha);margin-bottom:8px}.quiz-list summary{cursor:pointer;font-weight:800;color:var(--azul-escuro)}
+.visual-checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.visual-checklist label{padding:13px;background:#fff;border:1px solid var(--linha);font-weight:700}.visual-checklist input{accent-color:var(--azul);width:18px;height:18px;vertical-align:middle}
+.breath-diagram{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center}.lungs{grid-row:1/4;width:140px;height:180px;border:5px solid var(--azul);border-radius:48% 48% 42% 42%;display:grid;place-items:center;font-size:3rem;color:var(--azul);animation:breathe 3s ease-in-out infinite}.breath-step{display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border:1px solid var(--linha)}.breath-step span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--amarelo);font-weight:900}@keyframes breathe{50%{transform:scale(1.06)}}
+.pitch-ladder{height:250px;display:flex;align-items:flex-end;justify-content:center;gap:12px;padding:20px;background:#fff;border:1px solid var(--linha)}.pitch-ladder span{height:calc(58px + var(--step)*34px);width:70px;display:flex;align-items:flex-start;justify-content:center;padding-top:10px;background:linear-gradient(var(--azul),var(--azul-2));color:#fff;font-weight:900;border-top:5px solid var(--amarelo)}
+.vowel-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}.vowel-row span{width:82px;height:82px;display:grid;place-items:center;border-radius:50%;background:#fff;border:4px solid var(--azul);color:var(--azul);font-size:2rem;font-weight:900}
+.visual-timeline{display:flex;gap:0;overflow-x:auto;padding:18px 0}.visual-timeline div{min-width:150px;flex:1;position:relative;text-align:center;padding:18px 10px;background:#fff;border:1px solid var(--linha)}.visual-timeline div:not(:last-child):after{content:'→';position:absolute;right:-13px;top:50%;z-index:2;color:var(--azul);font-size:1.5rem;font-weight:900}.visual-timeline span{width:34px;height:34px;display:grid;place-items:center;margin:0 auto 7px;background:var(--amarelo);border-radius:50%;font-weight:900}.visual-timeline strong{color:var(--azul-escuro)}
+.rhythm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px}.rhythm-grid div{padding:17px;text-align:center;background:#fff;border:1px solid var(--linha)}.rhythm-grid span{display:block;color:var(--amarelo);background:var(--azul);font-weight:900;margin:-17px -17px 12px;padding:7px}.rhythm-grid strong{font-size:1.2rem;color:var(--azul-escuro)}
+.mic-diagram{display:flex;align-items:center;justify-content:center;gap:14px;padding:25px;background:#fff;border:1px solid var(--linha)}.mic-icon,.mouth-icon{font-size:3rem}.distance-line{min-width:180px;border-top:4px dashed var(--azul);text-align:center;color:var(--azul);padding-top:8px}
+.hand-pair{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.hand-pair>div{padding:18px;background:#fff;border:1px solid var(--linha);text-align:center}.finger-row{display:flex;justify-content:center;gap:7px;margin-top:14px}.finger-row span{width:43px;height:66px;border:3px solid var(--azul);border-radius:24px 24px 12px 12px;display:grid;place-items:center;color:var(--azul);font-weight:900}
+.keyboard-diagram{display:flex;position:relative;overflow-x:auto;padding:20px 5px 28px;background:#c7cfdd}.white-key{position:relative;flex:0 0 58px;height:220px;background:#fff;border:1px solid #45516a;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px}.white-key.active{background:#fff2a7}.white-key small{font-weight:850;color:#4c566b}.white-key span{position:absolute;bottom:42px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#f0842c;color:#fff;font-weight:900}.black-key{position:absolute;z-index:2;right:-18px;top:0;width:35px;height:132px;background:#111;border-radius:0 0 4px 4px}
+.bass-board{display:grid;grid-template-columns:55px repeat(6,1fr);gap:0;background:#fff;border:1px solid var(--linha);overflow-x:auto}.fret-head{background:var(--azul)}.fret-number{text-align:center;padding:8px;background:#eaf0fb;color:var(--azul);font-weight:850;border-left:1px solid #cfd6e2}.bass-row{display:contents}.bass-row strong{padding:14px;background:var(--azul);color:#fff;text-align:center}.bass-row span{position:relative;min-width:80px;height:52px;border-left:2px solid #8994a8;border-top:3px solid #3e4656;display:grid;place-items:center}.bass-row span b{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#f0842c;color:#fff;border:2px solid var(--azul);z-index:1}
+.image-lightbox{position:fixed;inset:0;background:rgba(3,11,28,.92);z-index:200;display:none;align-items:center;justify-content:center;padding:30px}.image-lightbox.open{display:flex}.image-lightbox img{max-width:95vw;max-height:90vh;object-fit:contain;background:#fff}.image-lightbox button{position:absolute;top:20px;right:22px;width:48px;height:48px;border:0;background:var(--amarelo);color:var(--azul-escuro);font-size:1.3rem;cursor:pointer}
+@media(max-width:700px){.visual-gallery,.visual-checklist,.hand-pair{grid-template-columns:1fr}.study-plan{grid-template-columns:repeat(2,1fr)}.mini-table div,.error-grid div{grid-template-columns:82px 1fr}.breath-diagram{grid-template-columns:1fr}.lungs{grid-row:auto;margin:auto}.instrument-parts{grid-template-columns:repeat(2,1fr)}.keyboard-diagram{padding-bottom:18px}.white-key{flex-basis:50px;height:190px}.black-key{width:30px;right:-15px;height:112px}}
+
+
+/* =========================================================
+   SISTEMA GLOBAL DE ANIMAÇÕES AO ROLAR
+   ========================================================= */
+html.js-enabled .motion-item {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  transition:
+    opacity var(--motion-duration, .72s) cubic-bezier(.22,.75,.25,1),
+    transform var(--motion-duration, .72s) cubic-bezier(.22,.75,.25,1),
+    filter var(--motion-duration, .72s) ease;
+  transition-delay: var(--motion-delay, 0ms);
+  will-change: opacity, transform;
+}
+html.js-enabled .motion-item.motion-left { transform: translate3d(-44px, 0, 0); }
+html.js-enabled .motion-item.motion-right { transform: translate3d(44px, 0, 0); }
+html.js-enabled .motion-item.motion-scale { transform: scale(.92); }
+html.js-enabled .motion-item.motion-zoom { transform: translate3d(0, 18px, 0) scale(.94); filter: blur(3px); }
+html.js-enabled .motion-item.motion-flip { transform: perspective(900px) rotateX(10deg) translateY(30px); transform-origin: center top; }
+html.js-enabled .motion-item.motion-visible {
+  opacity: 1;
+  transform: translate3d(0,0,0) scale(1) rotate(0);
+  filter: none;
+}
+
+/* Entrada inicial do topo */
+html.js-enabled .site-header { animation: headerDrop .7s cubic-bezier(.22,.75,.25,1) both; }
+html.js-enabled .hero .eyebrow { animation: heroEnter .72s .12s both; }
+html.js-enabled .hero h1 { animation: heroEnter .82s .22s both; }
+html.js-enabled .hero p { animation: heroEnter .82s .34s both; }
+html.js-enabled .hero .actions { animation: heroEnter .82s .46s both; }
+html.js-enabled .hero-logo { animation: heroLogoEnter .95s .28s cubic-bezier(.2,.8,.2,1) both, float 5s 1.3s ease-in-out infinite; }
+html.js-enabled .page-hero .eyebrow { animation: heroEnter .7s .08s both; }
+html.js-enabled .page-hero h1 { animation: heroEnter .78s .16s both; }
+html.js-enabled .page-hero p { animation: heroEnter .78s .27s both; }
+html.js-enabled .page-symbol { animation: symbolEnter .9s .22s both; }
+@keyframes headerDrop { from { opacity:0; transform:translateY(-22px) } to { opacity:1; transform:none } }
+@keyframes heroEnter { from { opacity:0; transform:translateY(32px) } to { opacity:1; transform:none } }
+@keyframes heroLogoEnter { from { opacity:0; transform:translateX(50px) scale(.9) rotate(2deg) } to { opacity:1; transform:none } }
+@keyframes symbolEnter { from { opacity:0; transform:scale(.65) rotate(-12deg) } to { opacity:.2; transform:none } }
+
+/* Pequenos movimentos contínuos e interativos */
+.card .icon, .lesson-number, .resource-date, .tag, .small-btn { transition: transform .22s ease, box-shadow .22s ease; }
+.card:hover .icon { transform: translateY(-4px) rotate(-4deg) scale(1.08); }
+.lesson-row:hover .lesson-number { transform: scale(1.08) rotate(-3deg); }
+.resource:hover .resource-date { transform: scale(1.04); }
+.small-btn:hover { transform: translateY(-2px); box-shadow:0 8px 18px rgba(16,36,76,.18); }
+.season:hover .season-color { animation: seasonPulse .7s ease; }
+@keyframes seasonPulse { 50% { filter:brightness(1.25); transform:scaleX(1.8); transform-origin:left } }
+
+/* Linha decorativa animada nos títulos */
+.title::after, .article h2::after, .article h3::after, .lesson-block h2::after {
+  content:"";
+  display:block;
+  width:0;
+  height:3px;
+  margin-top:9px;
+  background:var(--amarelo);
+  transition:width .75s cubic-bezier(.22,.75,.25,1) .15s;
+}
+.motion-visible .title::after,
+.motion-visible.article h2::after,
+.motion-visible.article h3::after,
+.motion-visible.lesson-block h2::after,
+.motion-visible .article h2::after,
+.motion-visible .article h3::after,
+.motion-visible .lesson-block h2::after { width:58px; }
+
+/* Barras, grades e diagramas ganham vida quando aparecem */
+.motion-visible .pitch-ladder span { animation: barRise .65s cubic-bezier(.22,.75,.25,1) both; animation-delay:calc(var(--step, 0) * 70ms); }
+.motion-visible .chord-flow span { animation: chipPop .48s both; }
+.motion-visible .chord-flow span:nth-child(2){animation-delay:.07s}.motion-visible .chord-flow span:nth-child(3){animation-delay:.14s}.motion-visible .chord-flow span:nth-child(4){animation-delay:.21s}
+.motion-visible .finger-row span { animation:fingerPop .45s both; }
+.motion-visible .finger-row span:nth-child(2){animation-delay:.06s}.motion-visible .finger-row span:nth-child(3){animation-delay:.12s}.motion-visible .finger-row span:nth-child(4){animation-delay:.18s}.motion-visible .finger-row span:nth-child(5){animation-delay:.24s}
+@keyframes barRise { from { transform:scaleY(.2); transform-origin:bottom; opacity:0 } to { transform:scaleY(1); opacity:1 } }
+@keyframes chipPop { from { opacity:0; transform:scale(.75) translateY(10px) } to { opacity:1; transform:none } }
+@keyframes fingerPop { from { opacity:0; transform:translateY(18px) scale(.8) } to { opacity:1; transform:none } }
+
+/* Stagger automático para filhos de grades */
+.motion-stagger > :nth-child(1){--motion-delay:0ms}.motion-stagger > :nth-child(2){--motion-delay:80ms}.motion-stagger > :nth-child(3){--motion-delay:160ms}.motion-stagger > :nth-child(4){--motion-delay:240ms}.motion-stagger > :nth-child(5){--motion-delay:320ms}.motion-stagger > :nth-child(6){--motion-delay:400ms}.motion-stagger > :nth-child(7){--motion-delay:480ms}.motion-stagger > :nth-child(8){--motion-delay:560ms}
+
+@media(max-width:650px){
+  html.js-enabled .motion-item.motion-left,
+  html.js-enabled .motion-item.motion-right { transform:translate3d(0,28px,0); }
+  html.js-enabled .motion-item { --motion-duration:.58s; }
+  html.js-enabled .hero-logo { animation:heroEnter .72s .28s both; }
+}
+@media(prefers-reduced-motion:reduce){
+  html.js-enabled .motion-item{opacity:1!important;transform:none!important;filter:none!important}
+  html.js-enabled .site-header,html.js-enabled .hero *,.page-symbol{animation:none!important}
+}
+
+
+/* =========================================================
+   IDENTIDADE CATÓLICA JOVEM + EXPERIÊNCIA MOBILE FIRST
+   ========================================================= */
+body{overflow-x:hidden}
+button,a{-webkit-tap-highlight-color:transparent}
+.article section{scroll-margin-top:138px}
+.hero::before,.page-hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.28;
+  background:
+    radial-gradient(circle at 92% 24%,transparent 0 34px,rgba(255,255,255,.14) 35px 37px,transparent 38px),
+    conic-gradient(from 45deg at 92% 24%,transparent 0 11%,rgba(242,223,57,.12) 11% 13%,transparent 13% 24%,rgba(255,255,255,.08) 24% 26%,transparent 26% 100%);
+}
+.page-hero{position:relative;overflow:hidden}
+.page-hero .container{position:relative;z-index:2}
+
+.faith-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.faith-badges span{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font-size:.75rem;font-weight:800;letter-spacing:.03em}
+.faith-badges b{color:var(--amarelo);font-size:1rem}
+.page-badges{margin-top:22px}
+
+.catholic-section{position:relative;background:linear-gradient(180deg,#fff 0%,#f7f9fd 100%);overflow:hidden}
+.catholic-section::before{content:"IHS";position:absolute;right:18px;top:-18px;color:rgba(30,56,107,.04);font-family:Georgia,serif;font-size:8rem;font-weight:900;letter-spacing:-.08em;line-height:1}
+.faith-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative}
+.faith-card{display:flex;gap:17px;align-items:flex-start;padding:25px;background:#fff;border:1px solid var(--linha);border-bottom:4px solid var(--amarelo);box-shadow:0 12px 32px rgba(16,36,76,.07)}
+.faith-icon{flex:0 0 49px;width:49px;height:49px;display:grid;place-items:center;background:var(--azul);color:var(--amarelo);font-size:1.35rem;font-weight:900}
+.faith-card h3{margin:0 0 7px;color:var(--azul-escuro)}
+.faith-card p{margin:0;color:var(--muted)}
+
+.catholic-band{padding:0;background:linear-gradient(120deg,#0b1d43,#1E386B);color:#fff;position:relative;overflow:hidden}
+.catholic-band::after{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(242,223,57,.18);border-radius:50%;right:-60px;top:-100px;box-shadow:0 0 0 24px rgba(255,255,255,.025),0 0 0 48px rgba(255,255,255,.018)}
+.catholic-band-inner{min-height:160px;display:flex;align-items:center;justify-content:center;gap:24px;padding:35px 0;position:relative;z-index:2}
+.catholic-mark{width:62px;height:62px;display:grid;place-items:center;border:2px solid var(--amarelo);color:var(--amarelo);font-size:1.8rem;flex:0 0 auto}
+.catholic-band blockquote{margin:0;font-size:clamp(1.35rem,3vw,2.2rem);font-weight:800;letter-spacing:-.02em}
+.catholic-band cite{display:block;margin-top:7px;color:var(--amarelo);font-size:.8rem;font-style:normal;text-transform:uppercase;letter-spacing:.14em}
+
+.liturgy-hero{background:radial-gradient(circle at 85% 18%,rgba(242,223,57,.2),transparent 28%),radial-gradient(circle at 20% 110%,rgba(255,255,255,.09),transparent 32%),linear-gradient(125deg,#091a3d,#1E386B 58%,#315c9f)}
+.catholic-page-symbol{border:1px solid rgba(242,223,57,.28);width:120px;height:120px;display:grid;place-items:center;color:var(--amarelo);font-size:4.5rem;opacity:.5}
+.liturgy-intro{display:flex;gap:19px;align-items:center;padding:24px;margin-bottom:45px;background:#fffbea;border:1px solid #f1e6a5;border-left:6px solid var(--amarelo)}
+.liturgy-cross{width:54px;height:54px;display:grid;place-items:center;background:var(--azul);color:var(--amarelo);font-size:1.5rem;flex:0 0 auto}
+.liturgy-intro strong{display:block;color:var(--azul-escuro);font-size:1.1rem}
+.liturgy-intro p{margin:4px 0 0!important}
+.article section+section{margin-top:58px;padding-top:8px}
+.rites-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+.rite-card{display:flex;gap:16px;padding:21px;background:#fff;border:1px solid var(--linha);border-left:4px solid var(--azul)}
+.rite-card>span{width:42px;height:42px;display:grid;place-items:center;background:var(--amarelo);color:var(--azul-escuro);font-weight:900;flex:0 0 auto}
+.rite-card h4{margin:0 0 5px;color:var(--azul-escuro);font-size:1.05rem}
+.rite-card p{margin:0!important;font-size:.92rem}
+.criteria-list{display:grid;gap:9px;margin-top:19px}
+.criteria-list>div{display:flex;align-items:center;gap:13px;padding:14px 16px;background:#fff;border:1px solid var(--linha)}
+.criteria-list span{width:33px;height:33px;display:grid;place-items:center;background:var(--azul);color:var(--amarelo);font-weight:900;flex:0 0 auto}
+.criteria-list p{margin:0!important}
+.liturgical-year-section{padding-top:25px!important;border-top:1px solid var(--linha)}
+.liturgical-wheel{display:flex;overflow-x:auto;gap:8px;padding:18px 2px 24px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.liturgical-wheel span{flex:0 0 auto;scroll-snap-align:start;padding:10px 15px;background:var(--wheel);color:#fff;font-weight:850;border-bottom:4px solid rgba(0,0,0,.14)}
+.season-label{display:block;color:var(--season);font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.liturgy-quote{margin-top:62px}
+.liturgy-quote .catholic-band-inner{padding-inline:28px}
+
+.catholic-values .icon{font-family:Georgia,serif;font-weight:900}
+.contact-section{background:linear-gradient(180deg,#fff,#f7f9fd)}
+.contact-invite{align-self:center}
+.contact-prayer{display:flex;align-items:center;gap:13px;padding:15px 0;color:var(--azul)}
+.contact-prayer>span{width:39px;height:39px;display:grid;place-items:center;border:1px solid var(--azul);color:var(--azul);flex:0 0 auto}
+.contact-prayer p{margin:0;font-weight:700}
+.contact-card{padding:28px;border-top-color:var(--amarelo)}
+.contact-cross{width:50px;height:50px;display:grid;place-items:center;background:var(--azul);color:var(--amarelo);font-size:1.4rem;margin-bottom:18px}
+.contact-row{display:grid;gap:2px;padding:13px 0;border-bottom:1px solid var(--linha);overflow-wrap:anywhere}
+.contact-row strong{color:var(--azul-escuro)}
+.contact-row span{color:var(--muted)}
+
+/* Menu mobile em painel, com alvos maiores para toque */
+.menu-backdrop{position:fixed;inset:76px 0 0;background:rgba(5,14,35,.54);z-index:39;opacity:0;visibility:hidden;transition:.25s;backdrop-filter:blur(2px)}
+.menu-backdrop.open{opacity:1;visibility:visible}
+body.menu-open{overflow:hidden}
+
+@media(max-width:980px){
+  .nav-links{display:flex;position:fixed;top:86px;right:0;left:auto;width:min(88vw,390px);height:calc(100dvh - 86px);padding:18px 17px 30px;background:#10244c;box-shadow:-20px 0 50px rgba(0,0,0,.28);transform:translateX(105%);opacity:0;visibility:hidden;transition:transform .28s ease,opacity .22s ease,visibility .22s;overflow-y:auto;z-index:45}
+  .nav-links.open{transform:none;opacity:1;visibility:visible}
+  .nav-links a{min-height:50px;display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.1);font-size:.96rem}
+  .nav-links a.active{background:rgba(242,223,57,.12);border-left:4px solid var(--amarelo);border-bottom-color:rgba(255,255,255,.1)}
+  .faith-grid{grid-template-columns:1fr}
+  .rites-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:650px){
+  :root{--sombra:0 12px 30px rgba(16,36,76,.11)}
+  .container{width:min(calc(100% - 28px),var(--largura))}
+  .navbar{min-height:72px;gap:10px}
+  .brand{gap:9px}.brand img{width:50px;height:50px}.brand strong{font-size:.94rem}
+  .nav-toggle{width:44px;height:44px;min-width:44px}
+  .nav-links{top:72px;height:calc(100dvh - 72px);width:min(90vw,360px)}
+  .menu-backdrop{inset:72px 0 0}
+  .hero-grid{min-height:auto;padding:52px 0 42px;gap:32px}
+  .hero h1{font-size:clamp(2.55rem,13vw,3.35rem);margin:14px 0 16px;line-height:.98}
+  .hero p{font-size:.98rem;line-height:1.62}
+  .hero-logo{padding:20px;max-width:270px;width:82%}
+  .faith-badges{gap:7px}.faith-badges span{padding:6px 9px;font-size:.69rem}
+  .actions{flex-direction:column;margin-top:24px}.actions .btn{width:100%;min-height:50px}
+  .section{padding:55px 0}
+  .section-head{margin-bottom:28px}
+  .title{font-size:clamp(1.85rem,9vw,2.35rem);line-height:1.12}
+  .subtitle{font-size:.94rem}
+  .card{padding:21px}
+  .page-hero{padding:48px 0 42px}
+  .page-hero h1{font-size:clamp(2.25rem,11vw,3rem);line-height:1.02}
+  .page-hero p{font-size:.94rem;line-height:1.6}
+  .page-symbol{position:absolute;right:12px;bottom:-4px;font-size:4.3rem;opacity:.13}
+  .catholic-page-symbol{width:82px;height:82px;font-size:3rem;right:14px;bottom:18px;opacity:.26}
+  .faith-card{padding:20px;gap:13px}.faith-icon{width:44px;height:44px;flex-basis:44px}
+  .catholic-band-inner{min-height:145px;justify-content:flex-start;gap:16px;padding:28px 0}
+  .catholic-mark{width:49px;height:49px;font-size:1.35rem;flex-basis:49px}
+  .catholic-band blockquote{font-size:1.25rem;line-height:1.25}
+  .content-grid{gap:25px}
+  .sidebar{position:sticky;top:72px;z-index:30;display:flex;align-items:center;gap:8px;overflow-x:auto;margin-inline:-14px;padding:9px 14px;background:rgba(255,255,255,.97);border-width:0 0 1px;box-shadow:0 7px 16px rgba(16,36,76,.07);scrollbar-width:none;white-space:nowrap}
+  .sidebar::-webkit-scrollbar{display:none}
+  .sidebar strong{display:none}
+  .sidebar a{flex:0 0 auto;padding:8px 12px;border:1px solid var(--linha);border-radius:999px;background:#fff;color:var(--azul);font-size:.76rem;font-weight:800}
+  .article section{scroll-margin-top:132px}
+  .article section+section{margin-top:45px}
+  .article h2{font-size:1.75rem}.article h3{font-size:1.35rem}
+  .liturgy-intro{align-items:flex-start;padding:18px;gap:13px;margin-bottom:35px}.liturgy-cross{width:43px;height:43px;flex-basis:43px}
+  .rite-card{padding:17px;gap:12px}.rite-card>span{width:37px;height:37px;flex-basis:37px}
+  .criteria-list>div{align-items:flex-start;padding:13px}
+  .seasons{gap:12px}.season{grid-template-columns:8px 1fr}.season-body{padding:19px}
+  .liturgy-quote{margin-inline:-14px;margin-top:50px}.liturgy-quote .catholic-band-inner{padding-inline:14px}
+  .contact-grid{gap:24px}.contact-card{padding:22px}
+  .footer{padding:45px 0 20px}.footer-logo{max-width:205px}
+  .footer-bottom{margin-top:30px}
+  html.js-enabled .motion-item.motion-zoom{filter:none}
+}
+
+
+/* Símbolo eucarístico da página de Liturgia */
+.eucharistic-symbol{
+  position:relative;
+  width:128px;
+  height:128px;
+  display:grid;
+  place-items:center;
+  border:0;
+  color:var(--amarelo);
+  opacity:.72;
+  isolation:isolate;
+}
+.eucharistic-symbol::before{
+  content:"";
+  position:absolute;
+  inset:5px;
+  border-radius:50%;
+  background:repeating-conic-gradient(
+    from -2deg,
+    rgba(242,223,57,.82) 0deg 2deg,
+    transparent 2deg 15deg
+  );
+  -webkit-mask:radial-gradient(circle,transparent 0 48%,#000 49% 100%);
+  mask:radial-gradient(circle,transparent 0 48%,#000 49% 100%);
+  z-index:-2;
+}
+.eucharistic-symbol::after{
+  content:"";
+  position:absolute;
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  background:rgba(255,255,255,.1);
+  border:2px solid rgba(242,223,57,.92);
+  box-shadow:0 0 0 7px rgba(255,255,255,.035),0 0 28px rgba(242,223,57,.18);
+  z-index:-1;
+}
+.eucharistic-symbol span{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.35rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  color:var(--amarelo);
+  text-shadow:0 2px 10px rgba(0,0,0,.18);
+}
+@media(max-width:650px){
+  .eucharistic-symbol{
+    width:88px;
+    height:88px;
+    right:12px;
+    bottom:14px;
+    opacity:.46;
+  }
+  .eucharistic-symbol::after{width:54px;height:54px}
+  .eucharistic-symbol span{font-size:.92rem}
+}
+
+
+/* Símbolo católico mais elegante: monograma IHS */
+.ihs-mini{
+  display:inline-block;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:900;
+  letter-spacing:-.09em;
+  line-height:1;
+  transform:scaleX(.94);
+}
+.faith-badges .ihs-mini{font-size:.78rem;color:var(--amarelo)}
+.icon .ihs-mini,.faith-icon .ihs-mini,.liturgy-cross .ihs-mini,.contact-cross .ihs-mini,.catholic-mark .ihs-mini{font-size:.82em}
+.ihs-page-symbol{font-size:2.2rem!important;font-family:Georgia,"Times New Roman",serif;font-weight:900;letter-spacing:-.08em}
+.contact-prayer>span{font-size:1.05rem;font-weight:900}
+@media(max-width:650px){
+  .catholic-section::before{font-size:5.5rem;right:-8px;top:4px}
+  .ihs-page-symbol{font-size:1.8rem!important}
+}
